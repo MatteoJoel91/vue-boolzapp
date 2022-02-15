@@ -3,3 +3,222 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(180deg, #1c9588 150px, #dadbd4 150px);
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    min-width: 500px;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    
+}
+
+.container::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.left .right{
+    float: left;
+    height: 100%;
+}
+
+.left{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* parte sinistra */
+.header-left, .header-right{
+    height: 60px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.avatar{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.header-buttons{
+ margin-left: auto;
+ color: #b1b1b1;
+}
+
+.header-buttons i{
+    padding: 10px;
+}
+
+.header-text{
+    font-weight: 500;
+    padding: 10px;
+}
+
+.notification-left{
+    height: 60px;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.left-notification{
+    font-size: 20px;
+}
+
+.left-notification i{
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #8edafc;
+    margin: 0px 15px ;
+}
+
+.search-left{
+    height: 50px;
+    background-color: #fafafa;
+    padding: 8px;
+}
+
+.search-input{
+    width: 100%;
+    padding: 10px 0px 10px 40px;
+    color: #b1b1b1;
+    font-size: 12px;
+    border: solid 1px #eee;
+    border-radius: 2px;
+}
+
+.contacts-left{
+    background-color: #fff;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.contact{
+    display: flex;
+    padding: 10px;
+}
+
+.contact-logo img{
+    height: 60px;
+    border-radius: 50%;
+    padding: 0 15px;
+}
+
+.contact-info {
+    width: calc(100% - 100px);
+}
+
+.contact-info div{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact.active, .contact:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+/* parte destra */
+.header-contact{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.bottom-right{
+    height: 60px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+}
+
+.left-footer-icon, .right-footer-icon{
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.message-input{
+    float: left;
+    width: 80%;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    color: #b1b1b1;
+    font-size: 12px;
+    border: solid 1px #eee;
+    border-radius: 2px;
+}
+
+.bottom-right::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.bottom-right{
+    font-size: 20px;
+    padding: 10px;
+    color: #b1b1b1;
+}
+
+.message-right{
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+
+.message{
+    max-width: 40%;
+    min-width: 150px;
+    padding: 20px 5px 5px 20px;
+    border-radius: 10px;
+}
+
+.message.recived{
+    background-color: #fff;
+}
+
+.message.sent{
+    background-color: #d5f9ba;
+    margin-left: auto;
+}
+
+.testo-mess{
+    margin-right: 20px;
+}
+
+.sentDate{
+    font-size: 10px;
+    color: #b1b1b1;
+    text-align: right;
+    margin-top: 5px;
+}

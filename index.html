@@ -4,27 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BoolZapp</title>
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- container con id per Vue -->
     <div class="container" id="root">
         
-        <!-- Header -->
-        <header>
-            
-        </header>
+        <div class="left">
+            <div class="header-left">
+                <img class="avatar" src="img/avatar_io.jpg" alt="">
+                <span class="header-text">Nome Utente</span>
+                <div class="header-buttons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
 
-        <!-- sezione centrale -->
-        <main>
-            
-        </main>
+            <div class="notification-left">
+                <div class="left-notification">
+                    <i class="fa fa-bell-slash"></i>
+                </div>
+                <div class="right-notification">
+                    <h3>Ricevi notifiche dei nuovi messaggi</h3>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <div class="search-left">
+                <input type="text" class="search-input">
+            </div>
+
+            <div class="contacts-left">
+                <div class="contact" v-for="contact in contacts">
+                    <div class="contact-logo">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <h3>{{contact.name}}</h3>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta consectetur accusamus numquam sed, ab voluptatum ipsa laborum dolorem ratione animi ea nulla veritatis explicabo necessitatibus quae eius odio eligendi modi!</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="header-right">
+                <img class="avatar" src="img/avatar_1.jpg" alt="">
+                <div class="header-contact">
+                   <span class="contact-name">Nome Utente</span>
+                   <span class="contact-lastAccess">Ultimo accesso...</span>
+                </div>
+                
+                <div class="header-buttons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="message-right">
+                <div class="message recived">
+                    <span class="testo-mess">Lorem ipsum dolor sit amet</span>
+                    <div class="sentDate">
+                        10/01/2020 15:50:00
+                    </div>
+                </div>
+                <div class="message sent">
+                    <span class="testo-mess">Lorem ipsum dolor sit amet</span>
+                    <div class="sentDate">
+                        10/01/2020 15:50:00
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="left-footer-icon">
+                    <i class="fa fa-smile"></i>
+                </div>
+                <input type="text" class="message-input">
+                <div class="right-footer-icon">
+                    <i class="fa fa-microphone"></i>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/main.js" type="text/javascript"></script>  
 </body>
-</html>
+</html>>
