@@ -33,17 +33,19 @@
             </div>
 
             <div class="search-left">
-                <input type="text" class="search-input">
+                <input class="search-input"  type="text" >
             </div>
 
             <div class="contacts-left">
-                <div class="contact" v-for="contact in contacts">
+                <div class="contact" v-for="(contact, indice) in contacts" @click="seleziona(indice)">
                     <div class="contact-logo">
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
                     <div class="contact-info">
                         <h3>{{contact.name}}</h3>
-                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta consectetur accusamus numquam sed, ab voluptatum ipsa laborum dolorem ratione animi ea nulla veritatis explicabo necessitatibus quae eius odio eligendi modi!</div>
+                        <div v-for="(message, index) in messages">
+                            {{message.text}}
+                        </div>
                     </div>
 
                 </div>
@@ -65,24 +67,24 @@
                 </div>
             </div>
             <div class="message-right">
-                <div class="message recived">
+                <div class="message" :class="(message.status == 'sent') ? 'sent' : 'received'" v-for= "(message, index) in contacts[profiloAttivo].messages">
+                    <span class="testo-mess">{{message.text}}</span>
+                    <div class="sentDate">
+                        {{message.date}}
+                    </div>
+                </div>
+                <!-- <div class="message sent">
                     <span class="testo-mess">Lorem ipsum dolor sit amet</span>
                     <div class="sentDate">
                         10/01/2020 15:50:00
                     </div>
-                </div>
-                <div class="message sent">
-                    <span class="testo-mess">Lorem ipsum dolor sit amet</span>
-                    <div class="sentDate">
-                        10/01/2020 15:50:00
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="bottom-right">
                 <div class="left-footer-icon">
                     <i class="fa fa-smile"></i>
                 </div>
-                <input type="text" class="message-input">
+                <input type="text" class="message-input" placeholder=" Scrivi un nuovo messaggio" v-model="newMessage" @keyup.enter="addMessage">
                 <div class="right-footer-icon">
                     <i class="fa fa-microphone"></i>
                 </div>

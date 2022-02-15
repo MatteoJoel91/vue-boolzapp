@@ -2,6 +2,8 @@ const root = new Vue (
     {
         el: "#root",
         data: {
+            profiloAttivo: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -70,7 +72,7 @@ const root = new Vue (
                     ],
                 },
                 {
-                    name: 'Luisa',
+                    name: 'Luigi',
                     avatar: '_4',
                     visible: true,
                     messages: [
@@ -91,7 +93,22 @@ const root = new Vue (
 
         // funzioni
         methods: {
+            addMessage() {
+                if(this.newMessage != '') {
+                    this.contacts[this.profiloAttivo].messages.push(
+                        {
+                            date: '15/02/2022 12:00:00',
+                            text: this.newMessage,
+                            status: 'sent'
+                        }
+                    );
+                }
+                this.newMessage = '';
+            },
 
+            seleziona(indice){
+                this.profiloAttivo = indice;
+            },
                  
         }
     }  

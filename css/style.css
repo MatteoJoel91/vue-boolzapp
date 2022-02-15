@@ -203,13 +203,15 @@ body{
     border-radius: 10px;
 }
 
-.message.recived{
+.message.received{
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
 .message.sent{
     background-color: #d5f9ba;
     margin-left: auto;
+    margin-bottom: 30px;
 }
 
 .testo-mess{
