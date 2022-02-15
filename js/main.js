@@ -101,13 +101,25 @@ const root = new Vue (
                             text: this.newMessage,
                             status: 'sent'
                         }
-                    );
+                    ); 
+                    this.newMessage = '';
+                    setTimeout(this.autoMessage, 1000);
                 }
-                this.newMessage = '';
+                
             },
 
             seleziona(indice){
                 this.profiloAttivo = indice;
+            },
+
+            autoMessage() {          
+                this.contacts[this.profiloAttivo].messages.push(
+                    {
+                        date: '15/02/2022 12:00:00',
+                        text: 'ok',
+                        status: 'received'
+                    }
+                );         
             },
                  
         }
