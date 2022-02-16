@@ -11,17 +11,17 @@ const root = new Vue (
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: '10/01/2020 15:30',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:50',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 16:15:22',
+                        date: '10/01/2020 16:15',
                         text: 'Tutto fatto!',
                         status: 'received'
                         }
@@ -33,17 +33,17 @@ const root = new Vue (
                     visible: true,
                     messages: [
                         {
-                        date: '20/03/2020 16:30:00',
+                        date: '20/03/2020 16:30',
                         text: 'Ciao come stai?',
                         status: 'sent'
                         },
                         {
-                        date: '20/03/2020 16:30:55',
+                        date: '20/03/2020 16:30',
                         text: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
                         },
                         {
-                        date: '20/03/2020 16:35:00',
+                        date: '20/03/2020 16:35',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                         }
@@ -55,17 +55,17 @@ const root = new Vue (
                     visible: true,
                     messages: [
                         {
-                        date: '28/03/2020 10:10:40',
+                        date: '28/03/2020 10:10',
                         text: 'La Marianna va in campagna',
                         status: 'received'
                         },
                         {
-                        date: '28/03/2020 10:20:10',
+                        date: '28/03/2020 10:20',
                         text: 'Sicuro di non aver sbagliato chat?',
                         status: 'sent'
                         },
                         {
-                        date: '28/03/2020 16:15:22',
+                        date: '28/03/2020 16:15',
                         text: 'Ah scusa!',
                         status: 'received'
                         }
@@ -77,12 +77,12 @@ const root = new Vue (
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: '10/01/2020 15:30',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
                         },
                         {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:50',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                         }
@@ -91,13 +91,21 @@ const root = new Vue (
             ]
         },
 
+        computed: {
+            filtroNomi() {
+              return this.contacts.filter(item => {
+                 return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+              })
+            }
+        },
+
         // funzioni
         methods: {
             addMessage() {
                 if(this.newMessage != '') {
                     this.contacts[this.profiloAttivo].messages.push(
                         {
-                            date: '15/02/2022 12:00:00',
+                            date: dayjs().format('DD/MM/YYYY H:m'),
                             text: this.newMessage,
                             status: 'sent'
                         }
@@ -115,7 +123,7 @@ const root = new Vue (
             autoMessage() {          
                 this.contacts[this.profiloAttivo].messages.push(
                     {
-                        date: '15/02/2022 12:00:00',
+                        date: dayjs().format('DD/MM/YYYY H:m'),
                         text: 'ok',
                         status: 'received'
                     }
