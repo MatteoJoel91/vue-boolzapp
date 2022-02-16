@@ -5,20 +5,17 @@
 }
 
 body{
-    height: 100vh;
     width: 100%;
     background-image: linear-gradient(180deg, #1c9588 150px, #dadbd4 150px);
-    display: flex;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .container{
-    min-width: 500px;
+    min-width: 800px;
     width: 80%;
-    height: 90%;
-    margin: auto;
-    display: flex;
-    
+    height: 90vh;
+    margin: 5vh auto;
+    display: flex;   
 }
 
 .container::after{
@@ -62,6 +59,7 @@ body{
 .header-buttons{
  margin-left: auto;
  color: #b1b1b1;
+ font-size: 20px;
 }
 
 .header-buttons i{
@@ -74,7 +72,7 @@ body{
 }
 
 .notification-left{
-    height: 60px;
+    height: 80px;
     background-color: #8edafc;
     display: flex;
     align-items: center;
@@ -97,19 +95,32 @@ body{
     margin: 0px 15px ;
 }
 
-.search-left{
-    height: 50px;
-    background-color: #fafafa;
-    padding: 8px;
-}
-
 .search-input{
     width: 100%;
-    padding: 10px 0px 10px 40px;
-    color: #b1b1b1;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 16px;
     border: solid 1px #eee;
     border-radius: 2px;
+} 
+
+.search-input-wrapper {
+    position: relative;
+
+}
+.search-input-wrapper::before {
+    font-family: "Font Awesome\ 5 Free"; 
+    content: "\f002";
+    font-weight: 600;
+    color: #B1B1B1;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.search-input-wrapper .search-input {
+    width: 100%;
+    padding-left: 40px;
 }
 
 .contacts-left{
@@ -131,6 +142,21 @@ body{
 
 .contact-info {
     width: calc(100% - 100px);
+    font-weight: 400;
+    position: relative;
+}
+
+.Date-contact{
+    color: #b1b1b1;
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+}
+
+.testo-messaggio{
+    color: #B1B1B1;
+    padding: 2px 0px 2px 0px;
 }
 
 .contact-info div{
@@ -169,7 +195,6 @@ body{
     width: 80%;
     width: 100%;
     padding: 10px 0px 10px 10px;
-    color: #b1b1b1;
     font-size: 12px;
     border: solid 1px #eee;
     border-radius: 2px;
@@ -184,7 +209,7 @@ body{
 .bottom-right{
     font-size: 20px;
     padding: 10px;
-    color: #b1b1b1;
+    color: #6b7377;
 }
 
 .message-right{

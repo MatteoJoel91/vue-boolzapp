@@ -27,13 +27,16 @@
                     <i class="fa fa-bell-slash"></i>
                 </div>
                 <div class="right-notification">
-                    <h3>Ricevi notifiche dei nuovi messaggi</h3>
+                    <span>Ricevi notifiche dei nuovi messaggi</span>
+                    <br>
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
 
             <div class="search-left">
-                <input class="search-input"  type="text" >
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat">
+                </div>
             </div>
 
             <div class="contacts-left">
@@ -42,9 +45,12 @@
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
                     <div class="contact-info">
-                        <h3>{{contact.name}}</h3>
-                        <div v-for="(message, index) in messages">
-                            {{message.text}}
+                        <span class="test">{{contact.name}}</span>
+                        <div class="Date-contact">
+                            test
+                        </div>
+                        <div class="testo-messaggio">
+                            ciao                          
                         </div>
                     </div>
 
@@ -54,15 +60,15 @@
 
         <div class="right">
             <div class="header-right">
-                <img class="avatar" src="img/avatar_1.jpg" alt="">
+                <img class="avatar" :src="`img/avatar${contacts[profiloAttivo].avatar}.jpg`" alt="">
                 <div class="header-contact">
-                   <span class="contact-name">Nome Utente</span>
+                   <span class="contact-name">{{contacts[profiloAttivo].name}}</span>
                    <span class="contact-lastAccess">Ultimo accesso...</span>
                 </div>
                 
                 <div class="header-buttons">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
@@ -97,4 +103,4 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/main.js" type="text/javascript"></script>  
 </body>
-</html>>
+</html>
