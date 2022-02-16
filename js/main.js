@@ -4,6 +4,7 @@ const root = new Vue (
         data: {
             profiloAttivo: 0,
             newMessage: '',
+            cercaContatti: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -91,13 +92,6 @@ const root = new Vue (
             ]
         },
 
-        computed: {
-            filtroNomi() {
-              return this.contacts.filter(item => {
-                 return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-              })
-            }
-        },
 
         // funzioni
         methods: {
@@ -129,7 +123,19 @@ const root = new Vue (
                     }
                 );         
             },
-                 
+
+            filtroNomi() {
+                for(let i=0; i<contacts.length; i++){
+                    if(contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
+                         //imposto l'attributo visibile del contatto a true
+                         this.contacts[i].visible = true;
+                    }
+                    else{
+                         //imposto l'attributo visibile del contatto a false
+                         this.contacts[i].visible = false;
+                    }
+                } 
+            },             
         }
     }  
 );

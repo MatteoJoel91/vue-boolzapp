@@ -35,12 +35,12 @@
 
             <div class="search-left">
                 <div class="search-input-wrapper">
-                    <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" v-model="cercaContatti" @keyup="filtroNomi">
                 </div>
             </div>
 
             <div class="contacts-left">
-                <div class="contact" v-for="(contact, indice) in contacts" @click="seleziona(indice)">
+                <div class="contact" v-for="(contact, indice) in contacts" @click="seleziona(indice)" v-if="contact.visible == true">
                     <div class="contact-logo">
                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                     </div>
