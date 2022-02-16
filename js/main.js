@@ -125,8 +125,9 @@ const root = new Vue (
             },
 
             filtroNomi() {
-                for(let i=0; i<contacts.length; i++){
-                    if(contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
+                for(let i=0; i<this.contacts.length; i++){
+                    console.log(this.contacts[i].name);
+                    if(this.contacts[i].name.toLowerCase().includes(this.cercaContatti.toLowerCase())){
                          //imposto l'attributo visibile del contatto a true
                          this.contacts[i].visible = true;
                     }
