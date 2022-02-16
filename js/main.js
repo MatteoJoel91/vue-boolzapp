@@ -94,7 +94,7 @@ const root = new Vue (
         computed: {
             filtroNomi() {
               return this.contacts.filter(item => {
-                 return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+                 return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
               })
             }
         },
