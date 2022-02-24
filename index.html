@@ -47,10 +47,10 @@
                     <div class="contact-info">
                         <span class="test">{{contact.name}}</span>
                         <div class="Date-contact">
-                            test
+                            {{contact.messages[contact.messages.length - 1].date}}
                         </div>
                         <div class="testo-messaggio">
-                            ciao                          
+                            {{contact.messages[contact.messages.length - 1].text}}                          
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@
                 <img class="avatar" :src="`img/avatar${contacts[profiloAttivo].avatar}.jpg`" alt="">
                 <div class="header-contact">
                    <span class="contact-name">{{contacts[profiloAttivo].name}}</span>
-                   <span class="contact-lastAccess">Ultimo accesso...</span>
+                   <span class="contact-lastAccess">Ultimo accesso: {{contacts[profiloAttivo].messages[contacts[profiloAttivo].messages.length -1].date}}</span>
                 </div>
                 
                 <div class="header-buttons">
